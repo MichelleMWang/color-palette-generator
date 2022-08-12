@@ -16,6 +16,10 @@ lightingOptions = ["Default", "Night", "Dusk", "Sunset", "Bright", "Overcast"]
 lightingVals = {
     "default": generateColors, 
     "night": generateNightColors, 
+    "dusk": generateDuskColors, 
+    "sunset": generateSunsetColors, 
+    "bright": generateBrightColors, 
+    "overcast": generateOvercastColors
 }
 currLighting = lightingVals.default; 
 
@@ -66,31 +70,133 @@ duskOp = document.getElementById("dusk")
 sunsetOp = document.getElementById("sunset")
 brightOp = document.getElementById("bright")
 overcastOp = document.getElementById("overcast")
+optionsArr = [defaultOp, nightOp, duskOp, sunsetOp, brightOp, overcastOp]
 
 function changeLightingButton(newLighting) {
     lightingButton.textContent = newLighting; 
 }
+function changeLightingButtonColor(text, color){
+    lightingButton.style.color = text; 
+    lightingButton.style.backgroundColor = color; 
+}
 
-defaultOP.addEventListener('click', () => {
-    
+defaultOp.addEventListener('click', () => {
+    currLighting = lightingVals.default; 
+    changeLightingButton(lightingOptions[0]); 
+    changeLightingButtonColor("rgb(255, 255, 255", "rgb(106, 106, 194)"); 
 })
 nightOp.addEventListener('click', () => { 
     currLighting = lightingVals.night; 
     changeLightingButton(lightingOptions[1])
+    changeLightingButtonColor("rgb(194, 197, 209)", "rgb(33, 29, 56)"); 
 })
+duskOp.addEventListener('click', () => {
+    currLighting = lightingVals.dusk; 
+    changeLightingButton(lightingOptions[2]); 
+    changeLightingButtonColor("rgb(235, 235, 235)", "rgb(139, 127, 153)");
+})
+sunsetOp.addEventListener('click', () => { 
+    currLighting = lightingVals.sunset; 
+    changeLightingButton(lightingOptions[3])
+    changeLightingButtonColor("rgb(255, 255, 255)", "rgb(235, 125, 106)");
+})
+brightOp.addEventListener('click', () => {
+    currLighting = lightingVals.bright; 
+    changeLightingButton(lightingOptions[4]); 
+    changeLightingButtonColor("rgb(255, 255, 255)", "rgb(112, 3, 255)");
+})
+overcastOp.addEventListener('click', () => { 
+    currLighting = lightingVals.overcast; 
+    changeLightingButton(lightingOptions[5])
+    changeLightingButtonColor("rgb(202, 205, 217)", "rgb(104, 106, 115)");
+})
+
+
+
+
 function generateNightColors() {
     for (let i = 0; i < 5; i++){
         randomColor = Math.floor(Math.random()*16777215).toString(16);
         rgbVal = hexToRgb(randomColor);  
-        rgbVal.r = Math.floor(rgbVal.r * 0.5)
-        rgbVal.g = Math.floor(rgbVal.g * 0.5)
+        rgbVal.r = Math.floor(rgbVal.r * 0.25)
+        rgbVal.g = Math.floor(rgbVal.g * 0.25)
         rgbVal.b = Math.floor(rgbVal.b * 0.5)
         newHex = rgbToHex(rgbVal.r, rgbVal.g, rgbVal.b)
         changeHex(newHex, i);
         changePanel(newHex, i);
     }
 }
+function generateDuskColors() {
+    for (let i = 0; i < 5; i++){
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+        rgbVal = hexToRgb(randomColor);  
+        rgbVal.r = Math.floor(rgbVal.r * 0.75)
+        rgbVal.g = Math.floor(rgbVal.g * 0.5)
+        rgbVal.b = Math.floor(rgbVal.b * 0.75)
+        newHex = rgbToHex(rgbVal.r, rgbVal.g, rgbVal.b)
+        changeHex(newHex, i);
+        changePanel(newHex, i);
+    }
+}
+function generateSunsetColors() {
+    for (let i = 0; i < 5; i++){
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+        rgbVal = hexToRgb(randomColor);  
+        rgbVal.r = Math.floor(rgbVal.r * 1.5)
+        rgbVal.g = Math.floor(rgbVal.g* 1.25)
+        rgbVal.b = Math.floor(rgbVal.b * 0.75)
+        newHex = rgbToHex(rgbVal.r, rgbVal.g, rgbVal.b)
+        changeHex(newHex, i);
+        changePanel(newHex, i);
+    }
+}
+function generateBrightColors() {
+    for (let i = 0; i < 5; i++){
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+        randomNum = Math.floor(Math.random() * 2)
+        console.log(randomNum); 
+        rgbVal = hexToRgb(randomColor); 
+        if (randomNum == 0) {
+            rgbVal.r = 0 
+        } else if (randomNum == 1){
+            rgbVal.g = 0 
+        } else {
+            rgbVal.b = 0 
+        }
+ 
+        /* rgbVal.r = Math.floor(rgbVal.r )
+        rgbVal.g = Math.floor(rgbVal.g )
+        rgbVal.b = Math.floor(rgbVal.b ) */
+        newHex = rgbToHex(rgbVal.r, rgbVal.g, rgbVal.b)
+        changeHex(newHex, i);
+        changePanel(newHex, i);
+    }
+}
+function generateOvercastColors() {
+    for (let i = 0; i < 5; i++){
+        randomColor = Math.floor(Math.random()*16777215).toString(16);
+        rgbVal = hexToRgb(randomColor);  
+        rgbVal.r = Math.floor(rgbVal.r * 0.75)
+        rgbVal.g = Math.floor(rgbVal.g * 0.75)
+        rgbVal.b = Math.floor(rgbVal.b * 0.75)
+        newHex = rgbToHex(rgbVal.r, rgbVal.g, rgbVal.b)
+        changeHex(newHex, i);
+        changePanel(newHex, i);
+    }
+}
 
+artistOnly = document.getElementById("lighting-options")
+randomNav = document.getElementById("random-nav")
+artistNav = document.getElementById("artist-nav")
 
-
+randomNav.addEventListener('click', () => {
+    artistOnly.style.display = "none"; 
+    randomNav.style.color = "rgb(146, 146, 146)"; 
+    artistNav.style.color = "rgb(83, 83, 83)"
+})
+artistNav.addEventListener('click', () => {
+    artistOnly.style.display = "flex"; 
+    artistNav.style.color = "rgb(146, 146, 146)"; 
+    randomNav.style.color = "rgb(83, 83, 83)"
+})
 

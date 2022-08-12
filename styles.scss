@@ -113,7 +113,6 @@ button{
     font-size: 1rem;  
     width: 50vw;  
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-    background-color: white; 
     background-color: rgb(106, 106, 194); 
     border-style: none; 
     color: white; 
@@ -124,4 +123,8 @@ button{
     &:active{
         background-color:rgb(61, 61, 117); 
     }
+}
+
+#lighting-options{
+    display: none; 
 }
