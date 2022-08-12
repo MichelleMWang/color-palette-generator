@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw; 
+    height: 100vh; 
+    font-family: "Fredoka", sans-serif; 
+    background: rgb(243, 243, 251)
+}
+#navbar{
+    display: flex; 
+    background-color: white; 
+    padding: 1.25rem; 
+    justify-content: space-between; 
+    .nav-item{
+        margin-left: 1rem; 
+        margin-right: 1rem;
+    }
+    #navlinks{
+        padding: .5rem; 
+    }
+    #logo {
+        color:rgb(106, 106, 194); 
+        margin-left: 2rem; 
+        font-size: 2rem; 
+        font-weight: medium;
+    }
+    span {
+        color:rgb(139, 139, 210); 
+    }
+}
+a {
+    font-size: 1.25rem; 
+    color: rgb(83, 83, 83); 
+    text-decoration: none; 
+    &:hover{
+        color: rgb(146, 146, 146); 
+        cursor: pointer; 
+    }
+}
+#lighting-option-span{
+    margin-right: 1rem; 
+}
+#lighting-options{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 1rem; 
+}
+#lighting-button{
+    width: 200px; 
+    padding: .5rem; 
+}
+#lighting-options:hover .dropdown-options {
+    display: flex; 
+}
+.dropdown-options{
+    display: flex; 
+    flex-direction: column; 
+    background-color: rgb(208, 206, 214);
+    margin-left: 8.3rem; 
+    position: absolute; 
+    margin-top: 12.4rem; 
+    display: none; 
+}
+.dropdown-item{
+    padding: .25rem; 
+    font-size: 1rem; 
+    padding-right: 8rem; 
+    &:hover{
+        background-color:rgb(229, 229, 229); 
+    }
+}
+
+#button-div{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 4rem; 
+}
+#color-blocks{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    .color-block{
+        padding: .5rem; 
+        margin-top: 1rem; 
+        .color-panel{
+            padding: .75rem; 
+            background-color: white; 
+            border-radius: 10px; 
+        }
+        .color-square{
+            height: 15rem; 
+            background-color: #dda2b1;
+        }
+        .color-hex{
+            padding: 1rem;
+            padding-left: 2.5rem; 
+            padding-right: 2.5rem;  
+            background-color: white; 
+        }
+    }
+}
+button{
+    padding: 1rem;
+    font-size: 1rem;  
+    width: 50vw;  
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    background-color: white; 
+    background-color: rgb(106, 106, 194); 
+    border-style: none; 
+    color: white; 
+    &:hover{
+        cursor: pointer; 
+        background-color:rgb(139, 139, 210); 
+    }
+    &:active{
+        background-color:rgb(61, 61, 117); 
+    }
+}

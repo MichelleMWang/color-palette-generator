@@ -1,1 +1,173 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Fredoka", sans-serif;
+  background: #f3f3fb;
+}
+
+#navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 1.25rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#navbar .nav-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#navbar #navlinks {
+  padding: .5rem;
+}
+
+#navbar #logo {
+  color: #6a6ac2;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-weight: medium;
+}
+
+#navbar span {
+  color: #8b8bd2;
+}
+
+a {
+  font-size: 1.25rem;
+  color: #535353;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #929292;
+  cursor: pointer;
+}
+
+#lighting-option-span {
+  margin-right: 1rem;
+}
+
+#lighting-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+#lighting-button {
+  width: 200px;
+  padding: .5rem;
+}
+
+#lighting-options:hover .dropdown-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #d0ced6;
+  margin-left: 8.3rem;
+  position: absolute;
+  margin-top: 12.4rem;
+  display: none;
+}
+
+.dropdown-item {
+  padding: .25rem;
+  font-size: 1rem;
+  padding-right: 8rem;
+}
+
+.dropdown-item:hover {
+  background-color: #e5e5e5;
+}
+
+#button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4rem;
+}
+
+#color-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#color-blocks .color-block {
+  padding: .5rem;
+  margin-top: 1rem;
+}
+
+#color-blocks .color-block .color-panel {
+  padding: .75rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#color-blocks .color-block .color-square {
+  height: 15rem;
+  background-color: #dda2b1;
+}
+
+#color-blocks .color-block .color-hex {
+  padding: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: white;
+}
+
+button {
+  padding: 1rem;
+  font-size: 1rem;
+  width: 50vw;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: white;
+  background-color: #6a6ac2;
+  border-style: none;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #8b8bd2;
+}
+
+button:active {
+  background-color: #3d3d75;
+}
+/*# sourceMappingURL=styles.css.map */

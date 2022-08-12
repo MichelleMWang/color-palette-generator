@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="generate-button">generate palette!</button>
+    <div id="navbar">
+        <a id="logo">Cooler<span id="logo2">Colors</span></a>
+        <div id="navlinks">
+            <a class="nav-item">Random</a>
+            <a class="nav-item">Artist</a>
+        </div> 
+    </div>
+
+    <div class="artist-only">
+        <div id="lighting-options">
+            <span id="lighting-option-span">Choose Lighting: </span>
+            <button id="lighting-button">Default</button>
+            <div class="dropdown-options">
+                <a id="default" class="dropdown-item" href="#">Default</a>
+                <a id="night"class="dropdown-item" href="#">Night</a>
+                <a id="dusk"class="dropdown-item" href="#">Dusk</a>
+                <a id="sunset"class="dropdown-item" href="#">Sunset</a>
+                <a id="bright"class="dropdown-item" href="#">Bright</a>
+                <a id="overcast"class="dropdown-item" href="#">Overcast</a>
+            </div>
+
+        </div>
+    </div>
+    <div id="color-blocks"> 
+        <div class="color-block">
+            <div class="color-panel">
+                <div id="1" class="color-square"></div>
+                <div id="1h" class="color-hex">#dda2b1</div>
+            </div>
+        </div>
+        <div class="color-block">
+            <div class="color-panel">
+                <div  id="2" class="color-square"></div>
+                <div  id="2h" class="color-hex">#dda2b1</div>
+            </div>
+        </div> 
+        <div class="color-block">
+            <div class="color-panel">
+                <div  id="3" class="color-square"></div>
+                <div  id="3h" class="color-hex">#dda2b1</div>
+            </div>
+        </div> 
+        <div class="color-block">
+            <div class="color-panel">
+                <div  id="4" class="color-square"></div>
+                <div  id="4h" class="color-hex">#dda2b1</div>
+            </div>
+        </div> 
+        <div class="color-block">
+            <div class="color-panel">
+                <div  id="5" class="color-square"></div>
+                <div  id="5h" class="color-hex">#dda2b1</div>
+            </div>
+        </div> 
+               
+    </div>
+    <div id="button-div">
+        <button id="generate-button">generate palette!</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
