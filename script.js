@@ -1,3 +1,10 @@
+const api_url = "https://www.thecolorapi.com/id?hex="
+modal1 = document.getElementById("modal1")
+modal2 = document.getElementById("modal2")
+modal3 = document.getElementById("modal3")
+modal4 = document.getElementById("modal4")
+modal5 = document.getElementById("modal5")
+
 generateButton = document.getElementById("generate-button"); 
 panel1 = document.getElementById("1"); 
 panel2 = document.getElementById("2"); 
@@ -12,6 +19,7 @@ hex5 = document.getElementById("5h");
 
 panelArr = [panel1, panel2, panel3, panel4, panel5]; 
 hexArr = [hex1, hex2, hex3, hex4, hex5];
+modalArr = [modal1, modal2, modal3, modal4, modal5]
 lightingOptions = ["Default", "Night", "Dusk", "Sunset", "Bright", "Overcast"]
 lightingVals = {
     "default": generateColors, 
@@ -22,9 +30,12 @@ lightingVals = {
     "overcast": generateOvercastColors
 }
 currLighting = lightingVals.default; 
+onPanelHover() 
+getColor() 
 
 generateButton.addEventListener('click', () => {
     currLighting() 
+    onPanelHover() 
 })
 
 function generateColors(){
@@ -42,6 +53,26 @@ function changeHex(hex, index){
 function changePanel(hex, index){
     panelDiv = panelArr[index] 
     panelDiv.style.backgroundColor = hex; 
+}
+
+function onPanelHover(){
+    for (let i = 0; i < hexArr.length; i++){
+        panelArr[i].addEventListener('mouseover', ()=>{
+            const hex = hexArr[i].textContent.substring(1).toUpperCase() 
+            const data = getColor(hex, modalArr[i])
+            modalArr[i].style.display = "block"
+        })
+        panelArr[i].addEventListener('mouseleave', () => {
+            modalArr[i].style.display = "none"
+        })
+    }    
+}
+
+async function getColor(hex, modal) {
+    const response = await fetch(api_url + hex);
+    const data = await response.json(); 
+    modal.textContent = "Name: " + data.name.value + "\n Hex: " + data.hex.value + 
+    "\n CMYK: " + data.cmyk.value + "\n RGB: " + data.rgb.value + "\n HSL: " + data.hsl.value; 
 }
 
 //copied code from https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
